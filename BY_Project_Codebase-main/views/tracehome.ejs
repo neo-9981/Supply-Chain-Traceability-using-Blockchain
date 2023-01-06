@@ -1,0 +1,158 @@
+<!DOCTYPE HTML id="vantajs">
+<html id="vantajs">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="../trace.css">
+        <link rel="icon" size="16*16" href="https://cdn1.iconfinder.com/data/icons/web-development-2-9/48/83-512.png" type="image/png">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,600&family=Dosis:wght@600&display=swap" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/100/three.min.js"></script>
+        <script src="https://www.vantajs.com/dist/vanta.waves.min.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="js/traceproduct.js"></script>
+        <link
+      rel="icon"
+      size="16*16"
+      href="https://cdn1.iconfinder.com/data/icons/web-development-2-9/48/83-512.png"
+      type="image/png"
+    />
+        <title>Jaggery Traceability</title>
+    </head>
+
+
+<body id="vantajs" >
+    
+
+    <div class="p-4">
+
+<div class="jumbotron">
+    <div class="container">
+        <form class="form-signin" id="trace-form" method="post">
+            <h1 class="h2 mb-3 font-weight-normal text-center">Trace Product</h1>
+            <input type="text" id="product_ID" name="product_id" class="form-control" placeholder="Enter Product ID" required autofocus> <br/>
+            <button class="btn btn-lg btn-success btn-block" type="submit" id="add-product-btn">Get Status</button>
+        </form>
+        <br/>
+          <b>
+        <div class="row" style="font-family: 'Dosis', sans-serif; font-size: large;" >
+          <div class="col-6" id="ID">
+          </div>
+          <div class="col-6" id="Name">
+          </div>
+        </div>
+        <hr />
+        <div class="row" style="font-family: 'Dosis', sans-serif; font-size: large;">
+          <div class="col-6" id="Quantity">
+  
+          </div>
+          <div class="col-6" id="Price">
+
+          </div>
+        </div>
+        <hr />
+         <div class="row" style="font-family: 'Dosis', sans-serif; font-size: large;">
+          <div class="col-6" id="Expdate">
+          </div>
+          <div class="col-6" id="manname">
+          </div>
+        </div>
+        <hr />
+        <div class="row" style="font-family: 'Dosis', sans-serif; font-size: large;">
+          <div class="col-6" id="Description">
+          </div>
+          <div class="col-6" id="Location">
+          </div>
+        </div>
+        </b>
+        <hr />
+      <center><div style=" font-weight: bolder;" >	<h2 id="check" ></h2> </div></center>
+      <div id="LangTable"><a href="/dashboard" id="aa"> </a> </div>                                    
+        
+        <div id="hide" class="d-none" style="font-family: 'Crimson Text', serif; font-size: larger;" >
+          <p>Open the Quality Certificate <a href="Certificates/Demo.pdf">here</a>.</p>
+          <br/> <br/>
+        <div class="row" id="man" style="visibility: hidden; ">
+
+          <div class="col-2" style="float: left;" >
+          <img   src="Images/Manufacturer1.jpg" height="100">
+          </div>
+          <div class="col-10" id="Manufacturer" style="padding-top: 44px;"></div>  
+        </div>
+        <br />
+        <div style="clear: both;"></div>
+        
+        <div class="row" id="dis" style="visibility: hidden;  margin-top: 50px;">
+          <div class="col-2" style="float: left;">
+            <img   src="Images/Dispatcher1.jpg" height="100">
+            </div>
+            <div class="col-10" id="Dispatcher" style="padding-top: 44px;"></div> 
+        </div>
+        <br />
+        <div style="clear: both;"></div>
+
+        <div class="row" id= "tra" style="visibility: hidden;  margin-top: 50px; ">
+          <div class="col-2" style="float: left;">
+            <img   src="Images/Transporter1.jpg" height="100">
+            </div>
+            <div class="col-10" id="Transporter" style="padding-top: 44px;"></div>
+        </div>
+        <br />
+        <div style="clear: both;"></div>
+        <div class="row" id="dist" style="visibility: hidden;  margin-top: 50px; ">
+          <div class="col-2" style="float: left;">
+            <img   src="Images/Distributor1.jpg" height="100">
+            </div>
+            <div class="col-10" id="Distributor" style="padding-top: 44px;"></div>
+        </div>
+        
+        <div style="clear: both;"></div>
+        <div class="row" id="who" style="visibility: hidden; margin-top: 50px;">
+          <div class="col-2" style="float: left;">
+            <img   src="Images/Wholesaler1.jpg" height="100">
+            </div>
+            <div class="col-10" id="Wholesaler" style="padding-top: 44px;"></div> 
+        </div>
+        <br />
+        
+        <div style="clear: both;"></div>  
+        <div class="row" id="ret" style="visibility: hidden; margin-top: 50px; ">
+          <div class="col-2" style="float: left;">
+            <img   src="Images/Retailer1.jpg" height="100">
+            </div>
+            <div class="col-10" id="Retailer" style="padding-top: 44px;"></div>
+        </div>      
+        </div>
+      </div>   
+    </div>      
+</div>
+
+
+</body>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <script>
+    VANTA.WAVES({
+      el: "#vantajs",
+      mouseControls: true,
+      touchControls: false,
+      gyroControls: false,
+      minHeight: 1800.00,
+      minWidth: 1000.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      shininess: 45.00,
+      waveHeight: 10.00,
+      waveSpeed: 0.50,
+      zoom: 0.7
+    })
+    </script>
+
+</html>

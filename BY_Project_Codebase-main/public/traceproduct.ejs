@@ -1,0 +1,159 @@
+<!DOCTYPE HTML id="vantajs" >
+<html id="vantajs"  >
+    <head>
+
+        <meta name="viewport" content="device=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="trace.css">
+        <link rel="icon" size="16*16" href="https://cdn1.iconfinder.com/data/icons/web-development-2-9/48/83-512.png" type="image/png">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/100/three.min.js"></script>
+        <script src="https://www.vantajs.com/dist/vanta.waves.min.js"></script>
+        <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> -->
+		<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+        <title>Jaggery Traceability</title>
+    </head>
+
+    <body style=""> 
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="
+    opacity: 0.94;">
+        <a class="navbar-brand" href="#">Jaggery Traceability</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/updateprofile">Update Profile</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+          </ul>
+          <span class="navbar-text white-text" style="color:white">
+            <%= name %>
+          </span> &nbsp;&nbsp;&nbsp;
+          <a class="btn btn-danger " href="/logout">Logout</a>
+        </div>
+      </nav>
+
+        <div class="p-4">
+
+    <div class="jumbotron">
+        <div class="container">
+            <form class="form-signin" id="form" method="post">
+                <h1 class="h2 mb-3 font-weight-normal text-center">Trace Product</h1>              
+                <input type="text" id="product_Name" name="pid" class="form-control" placeholder="Enter Product ID" required autofocus> <br/>               
+                <button class="btn btn-lg btn-success btn-block" type="submit" id="add-product-btn">Get Status</button>
+            </form>            
+        </div>
+        <br/>
+        <table class="table table-bordered track_tbl">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>S No</th>
+                    <th>Status</th>
+                    <th>Actor</th>
+                    <th>Date/Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="active">
+                    <td class="track_dot">
+                        <span class="track_line"></span>
+                    </td>
+                    <td>01</td>
+                    <td>Dispatched from distibutor address</td>
+                    <td>Flipkart</td>
+                    <td>31/07/2018 22:24:PM</td>
+                </tr>
+                <tr>
+                    <td class="track_dot">
+                        <span class="track_line"></span>
+                    </td>
+                    <td>01</td>
+                    <td>Dispatched from distibutor address</td>
+                    <td>Flipkart</td>
+                    <td>31/07/2018 22:24:PM</td>
+                </tr>
+                <tr>
+                    <td class="track_dot">
+                        <span class="track_line"></span>
+                    </td>
+                    <td>01</td>
+                    <td>Dispatched from distibutor address</td>
+                    <td>Flipkart</td>
+                    <td>31/07/2018 22:24:PM</td>
+                </tr>
+                <tr>
+                    <td class="track_dot">
+                        <span class="track_line"></span>
+                    </td>
+                    <td>01</td>
+                    <td>Dispatched from distibutor address</td>
+                    <td>Flipkart</td>
+                    <td>31/07/2018 22:24:PM</td>
+                </tr>
+                <tr>
+                    <td class="track_dot">
+                        <span class="track_line"></span>
+                    </td>
+                    <td>01</td>
+                    <td>Dispatched from distibutor address</td>
+                    <td>Flipkart</td>
+                    <td>31/07/2018 22:24:PM</td>
+                </tr>
+                <tr>
+                    <td class="track_dot">
+                        <span class="track_line"></span>
+                    </td>
+                    <td>01</td>
+                    <td>Dispatched from distibutor address</td>
+                    <td>Flipkart</td>
+                    <td>31/07/2018 22:24:PM</td>
+                </tr>
+                <tr>
+                    <td class="track_dot">
+                        <span class="track_line"></span>
+                    </td>
+                    <td>01</td>
+                    <td>Dispatched from distibutor address</td>
+                    <td>Flipkart</td>
+                    <td>31/07/2018 22:24:PM</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+
+    </body>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <script>
+    VANTA.WAVES({
+      el: "#vantajs",
+      mouseControls: true,
+      touchControls: false,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      shininess: 45.00,
+      waveHeight: 10.00,
+      waveSpeed: 0.50,
+      zoom: 0.7
+    })
+    </script>
+
+</html>
+
+

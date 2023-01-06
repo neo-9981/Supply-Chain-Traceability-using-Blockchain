@@ -1,0 +1,22 @@
+.boxes{
+    box-sizing: border-box;
+    border: 0px lightslategrey solid;
+    max-width: 35%;
+    margin-right: 150px;
+    height: 410px;
+    margin-bottom: 50px;
+    margin-left: 20px;
+    z-index: 1;
+}
+
+.images{
+    margin-left: 50px;
+    margin-top: 20px;
+    border-radius: 50%;
+
+}
+
+#our-team{
+    font-family: 'Crimson','Dosis';
+    text-decoration: underline;
+}

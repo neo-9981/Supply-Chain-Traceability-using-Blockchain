@@ -1,0 +1,190 @@
+<!DOCTYPE HTML id="vantajs">
+<html id="vantajs">
+    <head>
+        <!-- <meta name="viewport" content="device=device-width, initial-scale=1.0"> -->
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="../trace.css">
+        <link rel="icon" size="16*16" href="https://cdn1.iconfinder.com/data/icons/web-development-2-9/48/83-512.png" type="image/png">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/100/three.min.js"></script>
+        <script src="https://www.vantajs.com/dist/vanta.waves.min.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <link
+        rel="icon"
+        size="16*16"
+        href="https://cdn1.iconfinder.com/data/icons/web-development-2-9/48/83-512.png"
+        type="image/png"
+      />
+
+      <script type="text/javascript">
+        function fun(cell,row){
+          $.ajax({
+                type: 'POST',
+                url: '/getkeyproducts',
+                contentType: 'application/json',
+                data: JSON.stringify({                  
+                  "key":cell.innerHTML                  
+                }),
+                success: (response) => {
+                  // console.log(response);
+                  // document.getElementById("tblOne").innerHTML=response.Name;
+                  
+                  // document.getElementById("Owner").innerHTML=response.Owner;
+                  row.cells[1].innerHTML=response.Name;
+                  row.cells[2].innerHTML=response.Owner;
+                  row.cells[3].innerHTML=response.Location;
+                  
+                  // tblOne.row[i].cells[1].innerHTML=response.Name;
+                  // // alert(response.Success);
+                  setTimeout( () => {
+                  // console.log(res)
+                  },3000);
+                  // if (response.Success=="Product Added !!") {
+                  //   document.getElementById("aa").click();
+                  
+                },
+                error: () => {
+                // console.log("Error occured while processing your request.");
+                  alert("Error occured while processing your request");
+                }
+              })
+
+        }
+
+
+
+
+        $(document).ready( () => {
+
+            
+              // console.log("loaded");
+              
+              var table = document.getElementById('tblOne');
+            
+              var rowLength = table.rows.length;
+
+              for(var i=1; i<rowLength; i+=1){
+                var row=table.rows[i];
+                var cell = table.rows[i].cells[0];
+                var cell1=table.rows[i].cells[1];
+                var cell2=table.rows[i].cells[2];
+
+                fun(cell,row);
+
+            }
+            });
+         
+        
+        
+        </script>
+
+        <title>Jaggery Traceability</title>
+    </head>
+        
+      
+
+
+
+<body id="vantajs">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="
+  opacity: 0.94;">
+      <a class="navbar-brand" href="#">Jaggery Traceability</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/dashboard">Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/updateprofile">Update Profile</a>
+          </li>
+          <%if ( role  == 'Manufacturer') { %>                                     
+            <li class="nav-item active" style="background-color:lightgray;">
+              <a class="nav-link text-dark" href="/allproducts" st><b>All Products</b></a>
+            </li>
+          <% } %>
+          <li class="nav-item active">
+            <a class="nav-link" href="/aboutus">About Us</a>
+          </li>
+        </ul>
+        <span class="navbar-text white-text" style="color:white">
+          <%= name %>
+        </span> &nbsp;&nbsp;&nbsp;
+        <a class="btn btn-danger " href="/logout">Logout</a>
+      </div>
+    </nav>
+  
+    <div class="p-4">
+
+<div class="jumbotron">
+    <div class="container">
+      <h1 class="h2 mb-3 font-weight-normal text-center">All Product</h1>
+      <br/>
+      
+      <div style=" font-weight: bolder;" >	<span id="check" ></span> </div>
+        <table class="table table-striped  table-hover" id="tblOne" >
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col-3">ProductID</th>
+              <th scope="col-3">Name </th>
+              <th scope="col-3">CurrentOwner</th>
+              <th scope="col-3">Current Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- <% for(i in Data ) {%>
+              <tr>
+                <th scope="row" id="pid"><%=  Data[i].ID %></th>
+                <td id="date"></td>
+                <td id="status"></td>                
+              </tr>
+           <% } %> -->
+                <!-- <tr>
+                  <td><%= Data %></td>
+                </tr> -->
+                <% for(var i=0; i < Data.length; i++) { %>
+                  <tr>
+                    <td><%= Data[i].key %></td>
+                    <td id="Name"></td>
+                    <td id="Owner"></td>
+                    <td></td>
+                  </tr>
+              <% } %>
+           </tbody>                    
+        </table>
+
+        <div id="LangTable"><a href="/dashboard" id="aa"> </a> </div>
+    </div>
+    <br/>
+   </div> 
+</div>
+
+
+</body>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <script>
+    VANTA.WAVES({
+      el: "#vantajs",
+      mouseControls: true,
+      touchControls: false,
+      gyroControls: false,
+      minHeight: 1000.00,
+      minWidth: 1000.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      shininess: 45.00,
+      waveHeight: 10.00,
+      waveSpeed: 0.50,
+      zoom: 0.7
+    })
+    </script>
+
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <link
+    rel="icon"
+    size="16*16"
+    href="https://cdn1.iconfinder.com/data/icons/web-development-2-9/48/83-512.png"
+    type="image/png"
+  />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="./signin.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/100/three.min.js"></script>
+    <script src="https://www.vantajs.com/dist/vanta.waves.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Jaggery Traceability</title>
+    <script type="text/javascript">
+      $(document).ready(() => {
+  
+        $("#form2").submit((event) => {
+  
+          event.preventDefault();
+  
+          $.ajax({
+            type: 'POST',
+            url: '/forgetpass',
+            data: $('#form2').serialize(),
+            dataType: "json",
+            success: (response) => {
+              //alert("a");
+              //console.log(response.Success);
+              $('#form2')[0].reset();
+              //alert("abc");
+              document.getElementById("check").innerHTML = response.Success;
+  
+              setTimeout(() => {
+                document.getElementById("check").innerHTML = "";
+              }, 3000);
+              if (response.Success == "Password changed!") {
+                document.getElementById("aa").click();
+              };
+            },
+            error: () => {
+            }
+          })
+        });
+  
+      });
+    </script>
+
+  </head>
+
+  <body class="text-center" id="sidjs">
+      
+  <div class="container">
+    <h1 class="display-12"> Jaggery Traceability Application </h1>
+    <form class="form-signin" id="form2" method="post">
+        <h1 class="h2 mb-3 font-weight-normal">Change Password</h1>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required autofocus><br/> 
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="New Password" required><br/>   
+        <label for="inputPassword" class="sr-only">Confirm Password</label>
+        <input type="password" id="inputPassword" name="passwordConf" class="form-control" placeholder="Confirm Password" required>
+        <button class="btn btn-lg btn-primary btn-block" value="Change" type="submit" id="login-btn">Change</button>
+    </form>
+    <div style=" font-weight: bolder;">
+			<span id="check"></span>
+		</div>
+		<div id="LangTable">
+      <a href="/login" id="aa"></a>
+		</div>
+    </div>
+</body>
+<script>
+    VANTA.WAVES({
+      el: "#sidjs",
+      mouseControls: true,
+      touchControls: false,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      shininess: 45.00,
+      waveHeight: 10.00,
+      waveSpeed: 0.50,
+      zoom: 0.7
+    })
+    </script>
+</html>
